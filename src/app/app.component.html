@@ -1,0 +1,66 @@
+<!-- Navbar start -->
+<nav class="navbar navbar-expand-lg bg-dark fixed-top">
+  <div class="container-fluid h-100">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-around"
+      id="navbarTogglerDemo01"
+    >
+      <a class="navbar-brand" routerLink="">
+        <img
+          src="https://templatemo.com/templates/templatemo_579_cyborg_gaming/assets/images/logo.png"
+          alt="logo"
+        />
+      </a>
+
+      <form
+        class="d-flex"
+        role="search"
+        [formGroup]="searchForm"
+        (ngSubmit)="submitForm()"
+      >
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          style="width: 400px"
+          (input)="onInputChange()"
+          formControlName="gameName"
+        />
+
+        <div [@fadeOut] *ngIf="inputValue.length > 0">
+          <!-- Nội dung bị mờ dần -->
+        </div>
+
+        <button class="btn" type="submit">Search</button>
+      </form>
+
+      <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5 align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink=""
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="browse">Browse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Stream</a>
+          </li>
+          <li class="profile" routerLink="profile">
+            Profile
+            <img
+              src="https://i.pinimg.com/564x/e5/01/03/e501036e6679d2647391a263b78e1b80.jpg"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Navbar end -->
+
+<router-outlet></router-outlet>
+<!-- Bottom start -->

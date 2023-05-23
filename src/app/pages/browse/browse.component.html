@@ -1,0 +1,324 @@
+<div
+  class="d-flex justify-content-center align-items-center mt-2"
+  style="height: 100vh"
+>
+  <div class="w-100" style="max-width: 1000px; height: 100vh">
+    <!-- Nội dung của div ở đây -->
+    <div class="borderSlider" style="margin-top: 100px">
+      <div class="d-flex justify-content-around">
+        <div class="" style="width: 60%; height: 400px">
+          <h3>Featured Games</h3>
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://i.pinimg.com/564x/e0/8a/81/e08a81d683972de5b46808dee5253efb.jpg"
+                  class="d-block w-100"
+                />
+                <div class="view animated fadeInUp">
+                  <p>2.4m view</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://i.pinimg.com/736x/1d/33/23/1d3323c45c660b492df96932afccaf8c.jpg"
+                  class="d-block w-100"
+                />
+                <div class="view animated fadeInUp">
+                  <p>2.4m view</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://i.pinimg.com/564x/fe/bd/c4/febdc47f3ded41c1a54b09789191cf88.jpg"
+                  class="d-block w-100"
+                />
+                <div class="view animated fadeInUp">
+                  <p>2.4m view</p>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class=""
+          style="
+            background-color: black;
+            padding: 10px;
+            border-radius: 20px;
+            width: 40%;
+          "
+        >
+          <h3>Top Rating</h3>
+          <div class="download">
+            <div
+              class="download-item"
+              *ngFor="let tr of ratingResult"
+              (click)="goToGameDetails(tr.id)"
+            >
+              <img src="{{ tr.background_image }}" class="downloadImg" />
+
+              <div class="download-info">
+                <p>{{ tr.name }}</p>
+                <p style="color: #666">{{ tr.platforms[0].platform.name }}</p>
+                <div class="d-flex">
+                  <div
+                    class="d-flex align-items-center"
+                    style="margin-right: 10px"
+                  >
+                    <i
+                      class="fa-solid fa-star"
+                      style="margin-right: 5px; color: yellow"
+                    ></i>
+                    <p>{{ tr.rating }}</p>
+                  </div>
+
+                  <div class="d-flex align-items-center">
+                    <i
+                      class="fa-solid fa-download"
+                      style="margin-right: 5px; color: red"
+                    ></i>
+                    <p>{{ tr.added_by_status.yet }}m</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-100" style="margin-left: 30%">
+            <button class="btnn">Views All Games</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 w-100">
+        <h3>How To Start Your Live Stream</h3>
+        <div class="d-flex justify-content-around w-100">
+          <div class="liveForm" style="width: 30%">
+            <h5>Go To Your Profile</h5>
+            <p>
+              Cyborg Gaming is free HTML CSS website template provided by
+              TemplateMo. This is Bootstrap v5.2.0 layout.
+            </p>
+          </div>
+
+          <div class="liveForm" style="width: 30%">
+            <h5>Live Stream Button</h5>
+            <p>
+              If you wish to support us, you can make a small contribution via
+              PayPal to info [at] templatemo.com
+            </p>
+          </div>
+
+          <div class="liveForm" style="width: 30%">
+            <h5>You Are Live</h5>
+            <p>
+              You are not allowed to redistribute this template's downloadable
+              ZIP file on any other template collection website.
+            </p>
+          </div>
+        </div>
+
+        <div class="btnStart w-100" routerLink="/profile">
+          <button>Go to Profile</button>
+        </div>
+      </div>
+
+      <div class="mostStream w-100">
+        <h3>Most Popular Live Stream</h3>
+        <div class="d-flex justify-content-around mt-4 w-100">
+          <div class="mostStreamItem" style="width: 24%; margin: 5px">
+            <div class="mostStreamImg">
+              <img
+                src="https://i.pinimg.com/564x/9a/8f/01/9a8f01a148d5718f26663c8feba66574.jpg"
+                alt=""
+              />
+              <div
+                class="d-flex justify-content-around formPosition animated fadeInUp"
+              >
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-eye"></i>
+                  <p style="margin: 0 0 0 6px">1.2k</p>
+                </div>
+
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-gamepad"></i>
+                  <p style="margin: 0 0 0 6px">PUBG</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mostStreamName">
+              <img
+                src="https://i.pinimg.com/564x/39/35/fd/3935fdf7649a51358bb6a6294d64fa3d.jpg"
+                alt=""
+              />
+              <div style="margin-left: 10px">
+                <h5>KenganC</h5>
+                <p style="margin: 0">Just Talking With Fans</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mostStreamItem" style="width: 24%; margin: 5px">
+            <div class="mostStreamImg">
+              <img
+                src="https://i.pinimg.com/564x/d5/0f/02/d50f024660ea8fa192f5b87bfe6902bd.jpg"
+                alt=""
+              />
+              <div
+                class="d-flex justify-content-around formPosition animated fadeInUp"
+              >
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-eye"></i>
+                  <p style="margin: 0 0 0 6px">1.2k</p>
+                </div>
+
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-gamepad"></i>
+                  <p style="margin: 0 0 0 6px">CS-GO</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mostStreamName">
+              <img
+                src="https://i.pinimg.com/564x/dd/d8/5b/ddd85b3b852546278a81ca6355433ad2.jpg"
+                alt=""
+              />
+              <div style="margin-left: 10px">
+                <h5>LunaMa</h5>
+                <p style="margin: 0">CS-GO 36 Hours Live Stream</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mostStreamItem" style="width: 24%; margin: 5px">
+            <div class="mostStreamImg">
+              <img
+                src="https://i.pinimg.com/736x/6d/da/22/6dda22351433b55c79218d1fa8e10afb.jpg"
+                alt=""
+              />
+              <div
+                class="d-flex justify-content-around formPosition animated fadeInUp"
+              >
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-eye"></i>
+                  <p style="margin: 0 0 0 6px">1.2k</p>
+                </div>
+
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-gamepad"></i>
+                  <p style="margin: 0 0 0 6px">LoL</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mostStreamName">
+              <img
+                src="https://i.pinimg.com/564x/c3/22/f6/c322f6bc7198a7fc0b016880b168fdeb.jpg"
+                alt=""
+              />
+              <div style="margin-left: 10px">
+                <h5>Areluwa</h5>
+                <p style="margin: 0">Maybe Nathej Allnight Chillin'</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mostStreamItem" style="width: 24%; margin: 5px">
+            <div class="mostStreamImg">
+              <img
+                src="https://i.pinimg.com/564x/7c/5a/22/7c5a22e4111b708ccee7640371f19fdf.jpg"
+                alt=""
+              />
+              <div
+                class="d-flex justify-content-around formPosition animated fadeInUp"
+              >
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-eye"></i>
+                  <p style="margin: 0 0 0 6px">1.2k</p>
+                </div>
+
+                <div class="d-flex align-items-center eye" style="color: #fff">
+                  <i class="fa-solid fa-gamepad"></i>
+                  <p style="margin: 0 0 0 6px">valorant</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mostStreamName">
+              <img
+                src="https://i.pinimg.com/564x/d1/05/86/d105863174c8f3b14b877755946635be.jpg"
+                alt=""
+              />
+              <div style="margin-left: 10px">
+                <h5>GangTm</h5>
+                <p style="margin: 0">Live Streaming Till Morning</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btnStart" routerLink="">
+          <button>Discover All Streams</button>
+        </div>
+      </div>
+
+      <div class="footer">
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>
+</div>

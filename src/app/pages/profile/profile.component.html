@@ -1,0 +1,194 @@
+<div
+  class="d-flex justify-content-center align-items-center mt-2"
+  style="height: 100vh"
+>
+  <div class="w-100" style="max-width: 1000px; height: 100vh">
+    <!-- Nội dung của div ở đây -->
+    <div class="borderSlider" style="margin-top: 100px">
+      <div class="d-flex justify-content-between align-items-center">
+        <img
+          class="imgProfile"
+          src="https://i.pinimg.com/564x/cf/ac/c7/cfacc7b5c6db195ade4536bf60db9b0e.jpg"
+          alt=""
+        />
+
+        <div class="w-25 flex-wrap">
+          <div class="offline">
+            <p>Offline</p>
+          </div>
+
+          <div>
+            <p class="name">Alan Smithee</p>
+          </div>
+
+          <div>
+            <p class="description">
+              You Haven't Gone Live yet. Go Live By Touching The Button Below.
+            </p>
+          </div>
+
+          <button class="btnLive">Start Live Stream</button>
+        </div>
+
+        <div class="w-25 flex-wrap formTT">
+          <div class="d-flex justify-content-around mt-2 borderBottom">
+            <p class="formTT-text">Games Downloaded</p>
+            <p class="formTT-num">3</p>
+          </div>
+
+          <div class="d-flex justify-content-around mt-2 borderBottom">
+            <p class="formTT-text">Friends Online</p>
+            <div></div>
+            <p class="formTT-num">16</p>
+          </div>
+
+          <div class="d-flex justify-content-around mt-2 borderBottom">
+            <p class="formTT-text">Live Stream</p>
+            <div></div>
+            <p class="formTT-num">None</p>
+          </div>
+
+          <div class="d-flex justify-content-around mt-2 borderBottom">
+            <p class="formTT-text">Clips</p>
+            <div></div>
+            <p class="formTT-num">29</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Most Popular -->
+      <div class="content mt-5 w-100 h-100">
+        <h3>Your Most Popular Clips</h3>
+        <div
+          class="w-100 flex-wrap d-flex justify-content-around"
+          style="padding-bottom: 40px; position: relative"
+        >
+          <div class="w-25 item-content my-2" style="margin-right: 5px">
+            <a
+              href="https://www.youtube.com/watch?v=14AJ8Pdg5As"
+              target="_blank"
+            >
+              <img
+                src="https://i.pinimg.com/564x/05/5e/37/055e373f48d581d198d0f73030dc926f.jpg"
+                class="img-content"
+                alt=""
+              />
+              <div class="icon-play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </a>
+            <div class="d-flex justify-content-between">
+              <p>First Clip</p>
+              <div class="d-flex align-items-center" style="color: #e75e8d">
+                <i
+                  style="margin-bottom: 10px; margin-right: 10px"
+                  class="fa-solid fa-eye"
+                ></i>
+                <p>316</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-25 item-content my-2" style="margin-right: 5px">
+            <a
+              href="https://www.youtube.com/watch?v=tYXJI26nrNc"
+              target="_blank"
+            >
+              <img
+                src="https://i.pinimg.com/564x/0d/70/5b/0d705bcfdea76c7c4a6850cdd49111a5.jpg"
+                class="img-content"
+                alt=""
+              />
+              <div class="icon-play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </a>
+            <div class="d-flex justify-content-between">
+              <p>Second Clip</p>
+              <div class="d-flex align-items-center" style="color: #e75e8d">
+                <i
+                  style="margin-bottom: 10px; margin-right: 10px"
+                  class="fa-solid fa-eye"
+                ></i>
+                <p>316</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-25 item-content my-2" style="margin-right: 5px">
+            <a
+              href="https://www.youtube.com/watch?v=D_Aj3c7D9Jg"
+              target="_blank"
+            >
+              <img
+                src="https://i.pinimg.com/564x/2f/aa/bb/2faabbdc9a08413f3429a7fac8ac8997.jpg"
+                class="img-content"
+                alt=""
+              />
+              <div class="icon-play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </a>
+            <div class="d-flex justify-content-between">
+              <p>Third Clip</p>
+              <div class="d-flex align-items-center" style="color: #e75e8d">
+                <i
+                  style="margin-bottom: 10px; margin-right: 10px"
+                  class="fa-solid fa-eye"
+                ></i>
+                <p>316</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btnForm">
+          <button class="click-btn">Load More Clips</button>
+        </div>
+      </div>
+
+      <!-- Your Gaming Library -->
+      <div class="content mt-5 w-100 h-100">
+        <h3>Your Gaming Library</h3>
+        <div
+          class="d-flex flex-nowrap justify-content-around align-items-center p-3"
+          style="border-bottom: 1px solid #27292a"
+          *ngFor="let library of mostResult"
+        >
+          <img class="libraryImg" src="{{ library.background_image }}" alt="" />
+          <div class="libraryInfo">
+            <h4>{{ library.name }}</h4>
+            <p class="colorData">{{ library.platforms[0].platform.name }}</p>
+          </div>
+
+          <div>
+            <h4>Date Added</h4>
+            <p class="colorData">{{ library.released }}</p>
+          </div>
+
+          <div>
+            <h4>Hours Played</h4>
+            <p class="colorData">{{ library.playtime * 2 }}h</p>
+          </div>
+
+          <div>
+            <h4>Currently</h4>
+            <p class="colorData">Download</p>
+          </div>
+
+          <div>
+            <button class="btnDown">Download</button>
+          </div>
+        </div>
+
+        <div class="btnForm">
+          <button class="click-btn">View Your Library</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

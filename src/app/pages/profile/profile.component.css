@@ -1,0 +1,191 @@
+app-home {
+  min-height: 100%;
+}
+
+.carousel-item img {
+  object-fit: contain;
+}
+
+.borderSlider {
+  background-color: #27292a;
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+}
+
+.content {
+  padding: 20px 16px;
+  background-color: #1f2122;
+  border-radius: 20px;
+}
+
+.item-content {
+  background-color: #27292a;
+  border-radius: 10px;
+  padding: 20px;
+  height: 300px;
+  position: relative;
+}
+
+.img-content {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  height: 96%;
+}
+
+.icon-play {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%);
+  color: #e75e8d;
+  padding: 10px;
+  font-size: 24px;
+  background-color: azure;
+  text-align: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.fa-play {
+  transform: translateX(20%) translateY(-10%);
+}
+
+.btnForm {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.click-btn {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background-color: pink;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.click-btn:hover {
+  background-color: #fff;
+  color: pink;
+}
+
+.libraryImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.libraryInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 200px; /* Đặt độ rộng tối thiểu là 100px */
+}
+
+h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.colorData {
+  color: #666658;
+}
+
+.btnDown {
+  padding: 6px 10px;
+  outline: none;
+  border: 1px solid #666658;
+  background-color: transparent;
+  color: #666658;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+
+.btnDown:hover {
+  border: 1px solid pink;
+  color: pink;
+  transform: scale(1.1);
+}
+
+/* Profile */
+.imgProfile {
+  object-fit: cover;
+  width: 300px;
+  height: 400px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.imgProfile:hover {
+  transform: scale(1.1);
+}
+
+.offline {
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: red;
+  cursor: pointer;
+}
+
+div .name {
+  font-size: 24px;
+  margin: 30px 0;
+  font-weight: 600;
+}
+
+div .description {
+  color: #666658;
+  font-size: 14px;
+}
+
+.btnLive {
+  color: #e75e8d;
+  background-color: transparent;
+  border-color: #e75e8d;
+  padding: 10px 20px;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btnLive:hover {
+  background-color: #fff;
+}
+
+.formTT {
+  background-color: #000;
+  width: 100%;
+  height: 280px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.formTT-text {
+  color: #aaa;
+}
+
+.formTT-num {
+  color: #e75e8d;
+}
+
+.borderBottom {
+  border-top: 1px solid #e75e8d;
+  padding: 6px;
+}
+
+.borderBottom:first-child {
+  border-top: none;
+}

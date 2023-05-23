@@ -1,0 +1,98 @@
+<div
+  class="d-flex justify-content-center align-items-center mt-2"
+  style="height: 100vh"
+>
+  <div class="w-100" style="max-width: 1000px; height: 100vh">
+    <!-- Nội dung của div ở đây -->
+    <div class="borderSlider" style="margin-top: 100px">
+      <!-- Most Popular -->
+      <div class="content mt-5 w-100 h-100">
+        <h3>Danh sách tìm kiếm</h3>
+        <div
+          class="w-100 flex-wrap d-flex justify-content-around"
+          style="padding-bottom: 40px; position: relative"
+        >
+          <div
+            class="w-25 item-content my-2"
+            style="margin-right: 5px"
+            *ngFor="let s of displayData"
+            [routerLink]="['/detail', s.id]"
+          >
+            <div class="cardImg">
+              <img src="{{ s.background_image }}" class="img-content" />
+            </div>
+
+            <div>
+              <div
+                class="d-flex justify-content-between"
+                style="align-items: center"
+              >
+                <p style="font-size: 18px; font-weight: 500">{{ s.name }}</p>
+                <div class="d-flex align-items-center">
+                  <p class="fa-solid fa-star" style="color: yellow"></p>
+                  <p>{{ s.rating }}</p>
+                </div>
+              </div>
+
+              <div
+                class="d-flex justify-content-between"
+                style="align-items: center"
+              >
+                <p style="font-size: 16px; font-weight: 500">
+                  {{ s.released }}
+                </p>
+                <div class="d-flex align-items-center">
+                  <p class="fa-solid fa-download" style="color: red"></p>
+                  <!-- <p>{{ s.added_by_status?.yet || 100 }}m</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btnForm">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <button
+                  class="page-link"
+                  [disabled]="currentPage === 1"
+                  (click)="previousPage()"
+                >
+                  Previous
+                </button>
+              </li>
+
+              <ng-container *ngFor="let page of pages">
+                <li class="page-item">
+                  <button
+                    class="page-link"
+                    [disabled]="currentPage === page"
+                    (click)="goToPage(page)"
+                  >
+                    {{ page }}
+                  </button>
+                </li>
+              </ng-container>
+              <li class="page-item">
+                <button
+                  class="page-link"
+                  [disabled]="currentPage === pages.length"
+                  (click)="nextPage()"
+                >
+                  Next
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Your Gaming Library -->
+    </div>
+
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

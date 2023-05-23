@@ -1,0 +1,87 @@
+.borderSlider {
+  background-color: #27292a;
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+}
+
+.img {
+  width: 100%;
+  height: 300px;
+}
+
+.imgMini {
+  width: 30%;
+  object-fit: cover;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.imgBig {
+  width: 69%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.nameGame {
+  background-color: #27292a;
+  width: 49%;
+  height: 100px;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+
+.imgInfo {
+  width: 30%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.imgInfo:hover {
+  transform: scale(1.1);
+}
+
+.btnDown {
+  min-width: 400px;
+  background-color: transparent;
+  border-color: #e75e8d;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  outline: none;
+  transition: 0.5s;
+}
+
+.btnDown:hover {
+  background-color: #fff;
+  /* border-color: #e75e8d; */
+  color: #e75e8d;
+}
+
+.other {
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+}
+
+.other img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
